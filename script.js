@@ -77,9 +77,9 @@ class Player {
     // Subtract the enemy health with the damageAmount
       enemy.health-=damageAmount;
     //  Update the game and DOM with updateGame()
-        updateGame(player,enemy,gameState)
+        updateGame(p1,p2,gameState)
     //  Return a message of 'player name attacks enemy name for damageAmount'
-      return `${player1.name} attacks ${enemy.name} for ${damageAmount} damage!`
+      return `${player.name} attacks ${enemy.name} for ${damageAmount} damage!`
   }
   // ** Heal the player for random number from  1 to 5 **
   heal (player) {
@@ -107,7 +107,7 @@ class Game {
   declareWinner(isOver,p1, p2) {
     
     // Create a message variable that will hold a message based on the condition
-    let message="TIE!"
+    let message
     // If isOver is true AND p1 health is <= 0 then update message variable  to 'p1 WINS!'
     if (isOver && p1.health<=0) {
       message=`${p2.name} Wins!`
