@@ -107,7 +107,7 @@ class Game {
   declareWinner(isOver,p1, p2) {
     
     // Create a message variable that will hold a message based on the condition
-    let message
+    let message="TIE!"
     // If isOver is true AND p1 health is <= 0 then update message variable  to 'p1 WINS!'
     if (isOver && p1.health<=0) {
       message=`${p2.name} Wins!`
