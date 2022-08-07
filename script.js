@@ -190,7 +190,7 @@ document.addEventListener('keydown', function(e) {
 document.addEventListener('keydown', function(e) {
   
   // if you press a AND the player health is greater than 0 AND isOver is still false then strike()
-  if (e.key=='a' && p2.health>=0) {
+  if (e.key=='a' && p1.health>=0) {
     p1.heal(p1)
     // After healing then play heal sound
     document.getElementById("p1heal").play()
@@ -214,8 +214,8 @@ document.addEventListener('keydown', function(e) {
 
 document.addEventListener('keydown', function(e) {
   // if you press l AND the player health is greater than 0 AND isOver is still false then heal()
-  if (e.key=='l' && p1.health>=0){
-    p2.heal(p2)
+  if (e.key=='l' && p2.health>=0){
+    player2.heal(p2)
     // After healing then play heal sound
     document.getElementById("p2heal").play()
   }
