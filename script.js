@@ -77,7 +77,7 @@ class Player {
     // Subtract the enemy health with the damageAmount
       enemy.health-=damageAmount;
     //  Update the game and DOM with updateGame()
-        updateGame(player,enemy,attackDmg)
+        updateGame(player,enemy,gameState)
     //  Return a message of 'player name attacks enemy name for damageAmount'
       return `${player1.name} attacks ${enemy.name} for ${damageAmount} damage!`
   }
@@ -89,7 +89,7 @@ class Player {
     // Add hpAmount to players health
     player.health+=hpAmount
     //  Update the game and DOM with updateGame()
-    updateGame(p1,p2,game.isOver)
+    updateGame(p1,p2,gameState)
     //  Return a message of 'player name heals for hpAmount HP'
       return ` ${player.name} heals for ${hpAmount} HP!`
   }
@@ -107,7 +107,7 @@ class Game {
   declareWinner(isOver,p1, p2) {
     
     // Create a message variable that will hold a message based on the condition
-    let message
+    let message="TIE!"
     // If isOver is true AND p1 health is <= 0 then update message variable  to 'p1 WINS!'
     if (isOver && p1.health<=0) {
       message=`${p2.name} Wins!`
@@ -130,7 +130,7 @@ class Game {
     p2.health=100
     this.isOver=false
     resultDiv.innerText=""
-    updateGame(p1,p2,game.isOver)
+    updateGame(p1,p2)
 
   }
   
@@ -164,14 +164,14 @@ let p2=player2;
 // ** Create the game object from the Game class **
 let game=new Game();
 // ** Intialize the game by calling updateGame() **
-updateGame(p1,p2,game);
+updateGame(p1,p2);
 
 // ** Save intial isOver from the game object inside this variable **
-let gameState;
+let gameState=game.isOver;
 
 
 // ** Add a click listener to the simulate button that runs the play() method on click and pass in the players **
-playButton.onclick=()=>result.innerText=game.play(p1,p2)
+play.onclick=()=>result.innerText=game.play(p1,p2)
 
 // Add functionality where players can press a button to attack OR heal
 
